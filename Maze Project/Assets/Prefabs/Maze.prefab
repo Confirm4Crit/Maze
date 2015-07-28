@@ -40,12 +40,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cellPrefab: {fileID: 11475404, guid: f05a5422085b8e24a9460d730fc16ef1, type: 2}
-  generationStepDelay: .100000001
+  generationStepDelay: .00999999978
   size:
-    x: 50
-    z: 50
+    x: 20
+    z: 20
   passagePrefab: {fileID: 11493906, guid: 90480a3e9dfc4db4d97c313ab7b9da82, type: 2}
-  wallPrefab: {fileID: 11457286, guid: 9f8dbe2a8d3d46e478f16daed1210716, type: 2}
+  wallPrefabs:
+  - {fileID: 11435534, guid: 79416bebab3fd57478aaab01b455480e, type: 2}
+  - {fileID: 11497870, guid: 8a01d11b6f870504c8681aedb4e84650, type: 2}
+  - {fileID: 11453140, guid: 685931e715d8c6744b4fdbd241b69cb5, type: 2}
+  - {fileID: 11457286, guid: 9f8dbe2a8d3d46e478f16daed1210716, type: 2}
+  - {fileID: 11457286, guid: 9f8dbe2a8d3d46e478f16daed1210716, type: 2}
+  - {fileID: 11457286, guid: 9f8dbe2a8d3d46e478f16daed1210716, type: 2}
+  - {fileID: 11457286, guid: 9f8dbe2a8d3d46e478f16daed1210716, type: 2}
+  - {fileID: 11457286, guid: 9f8dbe2a8d3d46e478f16daed1210716, type: 2}
+  - {fileID: 11457286, guid: 9f8dbe2a8d3d46e478f16daed1210716, type: 2}
+  - {fileID: 11457286, guid: 9f8dbe2a8d3d46e478f16daed1210716, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -53,6 +63,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: wallPrefabs.Array.size
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: cellPrefab
       value: 
@@ -68,15 +82,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: generationStepDelay
-      value: .100000001
+      value: .00999999978
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: size.x
-      value: 50
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: size.z
-      value: 50
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: passagePrefab
@@ -85,6 +99,56 @@ Prefab:
         type: 2}
     - target: {fileID: 0}
       propertyPath: wallPrefab
+      value: 
+      objectReference: {fileID: 11457286, guid: 9f8dbe2a8d3d46e478f16daed1210716,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: wallPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 11435534, guid: 79416bebab3fd57478aaab01b455480e,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: wallPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 11497870, guid: 8a01d11b6f870504c8681aedb4e84650,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: wallPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 11453140, guid: 685931e715d8c6744b4fdbd241b69cb5,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: wallPrefabs.Array.data[6]
+      value: 
+      objectReference: {fileID: 11457286, guid: 9f8dbe2a8d3d46e478f16daed1210716,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: wallPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 11457286, guid: 9f8dbe2a8d3d46e478f16daed1210716,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: wallPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 11457286, guid: 9f8dbe2a8d3d46e478f16daed1210716,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: wallPrefabs.Array.data[9]
+      value: 
+      objectReference: {fileID: 11457286, guid: 9f8dbe2a8d3d46e478f16daed1210716,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: wallPrefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 11457286, guid: 9f8dbe2a8d3d46e478f16daed1210716,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: wallPrefabs.Array.data[8]
+      value: 
+      objectReference: {fileID: 11457286, guid: 9f8dbe2a8d3d46e478f16daed1210716,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: wallPrefabs.Array.data[7]
       value: 
       objectReference: {fileID: 11457286, guid: 9f8dbe2a8d3d46e478f16daed1210716,
         type: 2}
