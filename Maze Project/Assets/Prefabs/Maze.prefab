@@ -40,7 +40,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cellPrefab: {fileID: 11475404, guid: f05a5422085b8e24a9460d730fc16ef1, type: 2}
-  generationStepDelay: .00999999978
+  generationStepDelay: .0500000007
   size:
     x: 20
     z: 20
@@ -82,7 +82,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: generationStepDelay
-      value: .00999999978
+      value: .0500000007
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: size.x
