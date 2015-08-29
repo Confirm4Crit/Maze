@@ -11,12 +11,33 @@ public class Maze : MonoBehaviour {
     public MazePassage passagePrefab;
     public MazeWall[] wallPrefabs;
 
+    public MazeDoor doorPrefab;
+
+    public MazeRoomSettings[] roomSettings;
+    private List<MazeRoom> rooms = new List<MazeRoom>();
+
+    [Range(0f, 1f)]
+    public float doorProbability;
+
     public IntVector2 RandomCoordinates
         {
         get
             {
             return new IntVector2(Random.Range(0, size.x), Random.Range(0, size.z));
             }
+        }
+
+    private MazeRoom CreateRoom(int indexToExclude)
+        {
+        MazeRoom newRoom = ScriptableObject.CreateInstance<MazeRoom>();
+        newRoom.settingsIndex = Random.Range(0, roomSettings.Length);
+        if (newRoom.settingsIndex == indexToExclude)
+            {
+            newRoom.settingsIndex = (newRoom.settingsIndex + 1) % roomSettings.Length;
+            }
+        newRoom.settings = roomSettings[newRoom.settingsIndex];
+        rooms.Add(newRoom);
+        return newRoom;
         }
 
     public bool ContainsCoordinates(IntVector2 coordinate)
@@ -56,7 +77,9 @@ public class Maze : MonoBehaviour {
 
     private void DoFirstGenerationStep(List<MazeCell> activeCells)
         {
-        activeCells.Add(CreateCell(RandomCoordinates));
+        MazeCell newCell = CreateCell(RandomCoordinates);
+        newCell.Initialize(CreateRoom(-1));
+        activeCells.Add(newCell);
         }
 
     private void DoNextGenerationStep(List<MazeCell> activeCells)
@@ -93,9 +116,18 @@ public class Maze : MonoBehaviour {
 
     private void CreatePassage(MazeCell cell, MazeCell otherCell, MazeDirection direction)
         {
+        MazePassage prefab = Random.value < doorProbability ? doorPrefab : passagePrefab;
         MazePassage passage = Instantiate(passagePrefab) as MazePassage;
         passage.Initialize(cell, otherCell, direction);
-        passage = Instantiate(passagePrefab) as MazePassage;
+        passage = Instantiate(prefab) as MazePassage;
+        if (passage is MazeDoor)
+            {
+            otherCell.Initialize(CreateRoom(cell.room.settingsIndex));
+            }
+        else
+            {
+            otherCell.Initialize(cell.room);
+            }
         passage.Initialize(otherCell, cell, direction.GetOpposite());
         }
 
