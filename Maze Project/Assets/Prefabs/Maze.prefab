@@ -42,8 +42,8 @@ MonoBehaviour:
   cellPrefab: {fileID: 11475404, guid: f05a5422085b8e24a9460d730fc16ef1, type: 2}
   generationStepDelay: 0
   size:
-    x: 20
-    z: 20
+    x: 10
+    z: 10
   passagePrefab: {fileID: 11493906, guid: 90480a3e9dfc4db4d97c313ab7b9da82, type: 2}
   wallPrefabs:
   - {fileID: 11435534, guid: 79416bebab3fd57478aaab01b455480e, type: 2}
@@ -101,11 +101,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: size.x
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: size.z
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: passagePrefab
